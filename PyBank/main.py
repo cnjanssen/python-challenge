@@ -1,6 +1,8 @@
 import os
 import csv
 
+#test 1
+
 # path to file to be read
 # Your task is to create a Python script that analyzes the records to calculate each of the following:
 
