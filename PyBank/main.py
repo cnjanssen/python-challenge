@@ -60,11 +60,29 @@ big_month = str(great_inc+ " " +months[index_great_inc])
 small_month = str(great_dec+ " " +months[index_great_dec])
 
 
+
+
+
+#writing output to .txt file
+
+#declare variable f to open a file and the argument w to write the file and the plus sign to create it
+#if the file does not exist, "+" means it will be made
+f = open("pybank_output.txt", "w+")
+
+f.write("There are " +str(total_months) +" months\n")
+f.write("There was " +str(net_amt) +" Dollars  NET\n")
+f.write("The AVERAGE net change was " +str(average) +" Dollars AVERAGE PER Month\n")
+f.write("The greast increase was " +str(great_inc) +" and it happend at " +str(months[index_great_inc]) +"\n")
+f.write("The greast decrease was " +str(great_dec) +" and it happend at " +str(months[index_great_dec]) +"\n")
+f.close()
+
+
+
 #Writing output to CSV
 
 
 # Specify the file to write to
-output_path = os.path.join(".", ".", "new.csv")
+output_path = os.path.join(".", ".", "pybank-output.csv")
 
 # Open the file using "write" mode. Specify the variable to hold the contents
 with open(output_path, 'w', newline='') as csvfile:

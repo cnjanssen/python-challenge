@@ -1,0 +1,5 @@
+There are 86 months
+There was 38382578 Dollars  NET
+The AVERAGE net change was 446309.0465116279 Dollars AVERAGE PER Month
+The greast increase was 999942 and it happend at Aug-2013
+The greast decrease was -1022534 and it happend at Aug-2012

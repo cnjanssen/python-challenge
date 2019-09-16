@@ -2,7 +2,7 @@ import os
 import csv
 
 # path to file to be read
-cereal_csv_path = os.path.join(".", "Resources", "election_data.csv")
+cereal_csv_path = os.path.join("..", "Resources", "election_data.csv")
 #total number of votes
 total = 0
 #variables for the count of each one
@@ -67,6 +67,26 @@ print(f"BEGIN")
 print_results()
 print (f"The candidate with the most popular vote had {pop_win} PERCENT and is {winner}")
 print(f"END")
+
+
+#writing output to .txt file
+
+#declare variable f to open a file and the argument w to write the file and the plus sign to create it
+#if the file does not exist, "+" means it will be made
+f = open("pypoll_output.txt", "w+")
+f.write("Election Results\n")
+f.write("----------------\n")
+f.write("Total Votes " +str(total) +"\n")
+
+for cand in can_per:
+    print(cand)
+    
+    #csvwriter.writerow([can_per[cand], cand * total, cand])
+    row = str(can_per[cand]) + " : " +str(cand) + " % " +"(" +str(cand*total) +")"
+    f.write(row +"\n")
+    
+f.write("The winner is " + str(winner))
+
 
 # Specify the file to write to
 output_path = os.path.join(".", ".", "results.csv")
