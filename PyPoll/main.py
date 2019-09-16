@@ -86,30 +86,3 @@ for cand in can_per:
     f.write(row +"\n")
     
 f.write("The winner is " + str(winner))
-
-
-# Specify the file to write to
-output_path = os.path.join(".", ".", "results.csv")
-
-# Open the file using "write" mode. Specify the variable to hold the contents
-with open(output_path, 'w', newline='') as csvfile:
-
-    # Initialize csv.writer
-    csvwriter = csv.writer(csvfile, delimiter=',')
-
-    # Write the first row 
-    csvwriter.writerow(['Candidate', 'NUMBER', 'Percentages'])
-
-    #write all necessary candidate percentages
-    for cand in can_per:
-        print(cand)
-        csvwriter.writerow([can_per[cand], cand * total, cand])
-        #print (f"The candidate with the most popular vote had {pop_win} PERCENT and is {winner}")
-        #csvwriter.writerow([cand, int(can_per[cand]) * total, int(can_per[cand]])
-        
-    #write line break
-    csvwriter.writerow(["-----", "------", "------"])
-    
-    #write winner row(last ROW)
-    win_str = str(pop_win) + " %"
-    csvwriter.writerow(["The WINNNER", win_str, winner])
